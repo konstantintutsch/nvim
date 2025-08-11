@@ -2,7 +2,7 @@ require("onenord").setup({
     theme = "light",
     disable = {
         background = true,
-        float_background = true
+        float_background = false
     }
 })
 
