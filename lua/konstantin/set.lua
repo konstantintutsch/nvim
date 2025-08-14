@@ -11,3 +11,6 @@ vim.opt.smartindent = true
 
 -- GUI colors
 vim.opt.termguicolors = true
+
+-- hidden files in netrw
+vim.g.netrw_list_hide = [[\~$]]
