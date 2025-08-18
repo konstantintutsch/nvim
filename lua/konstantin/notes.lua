@@ -1,5 +1,5 @@
 note = {}
-note.directory = "~/Documents/Notizen"
+note.directory = vim.loop.os_homedir() .. "/Documents/Notizen"
 
 function note.new()
     local title = vim.fn.input("Titel: ")
@@ -12,7 +12,7 @@ function note.new()
     vim.cmd("edit " .. file)
 
     -- only add title to new notes
-    if not vim.loop.fs_stat(file) then
+    if not vim.uv.fs_stat(file) then
         vim.api.nvim_buf_set_lines(0, 0, -1, false, {
           "# " .. title,
           "",
